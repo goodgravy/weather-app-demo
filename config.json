@@ -18,6 +18,9 @@
 			"permissions": ["http://*/*", "https://*/*"]
 		},
 		"tools": true,
-		"reload": true
+		"reload": true,
+		"button": {
+			"default_popup": "index.html"
+		}
 	}
 }
