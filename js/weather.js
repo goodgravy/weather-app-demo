@@ -31,3 +31,14 @@ var forecast = [
 
 forge.logging.info(JSON.stringify(forecast));
 
+function showForecast (forecastData) {
+	forge.logging.debug('showing forecast for data '+JSON.stringify(data));
+
+	var tmpl = $('#forecast_information_tmpl').text();
+	var output = Mustache.to_html(tmpl, forecastData);
+	$('#forecast').html(output);
+}
+
+$(function () {
+	showForecast(forecast);
+});

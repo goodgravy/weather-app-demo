@@ -2,9 +2,28 @@
 <html>
 	<head>
 		<script src="https://trigger.io/catalyst/target/target-script-min.js#4DBBC75C-B44E-4B50-BAFA-F49244502E51"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/mustache.min.js"></script>
 		<script type="text/javascript" src="js/weather.js"></script>
 	</head>
 	<body>
-		Weather forecast here.
+		<script type="x-mustache-template" id="forecast_information_tmpl">
+			<span>Forecast for {{city}}</span><br/>
+			<span>{{forecast_date}}</span>
+			<table>
+			{{#conditions}}
+				<tr>
+					<td>
+						<h2>{{title}}</h2>
+						<img src="{{icon_url}}">
+						<h6>{{fcttxt}}</h6>
+					</td>
+				</tr>
+			{{/conditions}}
+			</table>
+		</script>
+
+		<div id="forecast"></div>
+
 	</body>
 </html>
