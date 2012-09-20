@@ -1,29 +1,69 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- part 2 -->
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.1.0.min.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://trigger.io/catalyst/target/target-script-min.js#4DBBC75C-B44E-4B50-BAFA-F49244502E51"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/mustache.min.js"></script>
+
+		<!-- part 1 -->
 		<script type="text/javascript" src="js/weather.js"></script>
 	</head>
 	<body>
+
+		<!-- part 1 -->
+		<!-- Weather forecast here. -->
+
+		<!-- part 2 -->
 		<script type="x-mustache-template" id="forecast_information_tmpl">
-			<span>Forecast for {{city}}</span><br/>
-			<span>{{forecast_date}}</span>
-			<table>
-			{{#conditions}}
-				<tr>
-					<td>
-						<h2>{{title}}</h2>
-						<img src="{{icon_url}}">
-						<h6>{{fcttxt}}</h6>
-					</td>
-				</tr>
-			{{/conditions}}
-			</table>
+			<h1>Forecast for {{display_location.city}}, {{display_location.state_name}}</h1>
+			<p>{{observation_time}}</p>
 		</script>
 
-		<div id="forecast"></div>
+		<script type="x-mustache-template" id="current_conditions_tmpl">
+			<table>
+				<tr>
+					<td><img src="{{icon_url}}" /></td>
+					<td>
+						<div>{{weather}}</div>
+						<div>{{temp_f}}&deg;F</div>
+						<div>{{relative_humidity}}</div>
+						<div>{{wind_string}}</div>
+					</td>
+				</tr>
+			</table>
+		</script>
+		
+		<script type="x-mustache-template" id="forecast_conditions_tmpl">
+			{{#forecastday}}
+			<td>
+				<h2>{{date.weekday_short}}</h2>
+				<img src="{{icon_url}}">
+				<h6>{{conditions}}</h6>
+				<h6>Low: {{low.fahrenheit}}&deg;F</h6>
+				<h6>High: {{high.fahrenheit}}&deg;F</h6>
+			</td>
+			{{/forecastday}}
+		</script>
+		
+		<header id="forecast_information"></header>
+
+		<section id="current_conditions"></section>
+
+		<section id="forecast_conditions">
+			<table>
+				<tr>
+				</tr>
+			</table>
+		</section>
+
+		<!-- part 4 -->
+		<div id="options">
+			<div id="options_header">Select City</div>
+			<select id="city_menu"></select>
+		</div>
 
 	</body>
 </html>

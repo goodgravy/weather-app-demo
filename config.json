@@ -15,7 +15,7 @@
 		"media": true,
 		"prefs": true,
 		"request": {
-			"permissions": ["http://*/*", "https://*/*"]
+			"permissions": ["http://api.wunderground.com/api/*"]
 		},
 		"tools": true,
 		"reload": true,
