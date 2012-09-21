@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<!-- part 2 -->
-		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.1.0.min.css">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://trigger.io/catalyst/target/target-script-min.js#4DBBC75C-B44E-4B50-BAFA-F49244502E51"></script>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
@@ -18,7 +17,7 @@
 
 		<!-- part 2 -->
 		<script type="x-mustache-template" id="forecast_information_tmpl">
-			<h1>Forecast for {{display_location.city}}, {{display_location.state_name}}</h1>
+			<h1>Forecast for {{display_location.full}}</h1>
 			<p>{{observation_time}}</p>
 		</script>
 
@@ -29,8 +28,8 @@
 					<td>
 						<div>{{weather}}</div>
 						<div>{{temp_f}}&deg;F</div>
-						<div>{{relative_humidity}}</div>
-						<div>{{wind_string}}</div>
+						<div>Humidity: {{relative_humidity}}</div>
+						<div>Wind: {{wind_string}}</div>
 					</td>
 				</tr>
 			</table>
@@ -41,9 +40,9 @@
 			<td>
 				<h2>{{date.weekday_short}}</h2>
 				<img src="{{icon_url}}">
-				<h6>{{conditions}}</h6>
-				<h6>Low: {{low.fahrenheit}}&deg;F</h6>
-				<h6>High: {{high.fahrenheit}}&deg;F</h6>
+				<div>{{conditions}}</div>
+				<div>Low: {{low.fahrenheit}}&deg;F</div>
+				<div>High: {{high.fahrenheit}}&deg;F</div>
 			</td>
 			{{/forecastday}}
 		</script>

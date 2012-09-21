@@ -12,8 +12,6 @@ html {background:#EEE;}
 body {font:12px/1.5 arial,helvetica,sans-serif; color:#222; height: 350px}
 a:link, a:visited {text-decoration:none; color:red;}
 img {padding:5px; margin:5px 5px 5px 0; background:#fff;}
-h2, #options_header {font-size:18px; text-align:left;}
-h6, #current_conditions td {font-size:10px;}
 
 /* Set App Styles */
 #forecast_information, #current_conditions, #forecast_conditions, #options {
@@ -35,14 +33,27 @@ h6, #current_conditions td {font-size:10px;}
 	font-weight:normal; 
 }
 
+#current_conditions td {
+	font-size:10px;
+}
+
 #forecast_conditions td {
 	width:155px; /* this width makes sure that the weather desc don't wrap - adjust for diff page sizes */
 } 
 #forecast_conditions td img {
-	/*float:left;*/ 
 	margin-top:3px;
 }
+#forecast_conditions h2 {
+	font-size: 18px;
+}
+#forecast_conditions div {
+	font-size: 10px;
+}
 
+#options_header {
+	font-size:18px; 
+	text-align:left;
+}
 #options {
 	border-bottom:none;
 }
